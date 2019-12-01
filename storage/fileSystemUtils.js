@@ -33,6 +33,7 @@ const readLog = (containerId, options) => {
   const maxLines = parseInt(actual.offset) + limit;
   const offset = parseInt(actual.offset);
 
+  /* eslint-disable no-unused-vars */
   return new Promise((resolve, reject) => {
     rl.on('line', (line) => {
       if (i >= offset && i < maxLines) {
@@ -48,16 +49,20 @@ const readLog = (containerId, options) => {
     rl.on('close', () => resolve(fileLines));
   });
 };
+/* eslint-enable no-unused-vars */
 
 const checkLogExist = async (containerId) => {
   try {
+  /* eslint-disable no-undef */
   const directoryPath = path.join(__dirname, '..');
+  /* eslint-enable no-undef */
   const fileName = `${containerId}.log`;
   const dirContent = fs.readdirSync(directoryPath);
   return dirContent.includes(fileName);
   } catch (error) {
+    console.log(`Error checking log exist ${error}`)
     throw error;
-  };
+  }
 };
 
 module.exports = {

@@ -11,6 +11,7 @@ const getRunningContainers = async () => {
       const containersIds = containers.filter((container) => container.data.Labels.logThis === "true");
       return containersIds;
    } catch (error) {
+      console.log(`Error getting running containers ${error}`)
       throw error;
    }
 };
@@ -26,8 +27,8 @@ const startLoggingContainer = async (container) => {
       //get the events
       logs.on('data', info => logWrite.writeLog(`${container.id}.log`, info));
       logs.on('error', err => logWrite.writeLog(`${container.id}.log`, err));
-   }
-   catch (error) {
+   } catch (error) {
+      console.log(`Error logging containers ${error}`)
       throw error;
    }
 };
