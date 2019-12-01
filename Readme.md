@@ -21,3 +21,7 @@ Api:
  - You mayb use query params offset and limit to control which rows are being retrived
  - Calling the api will retrieve rows 1-20 in the log file if no parameters are specified
 
+Running the Demo:
+  - run ./demo.sh
+
+Please note: demoContainer folder is just for demo, not a part of the code
