@@ -24,4 +24,10 @@ Api:
 Running the Demo:
   - run ./demo.sh
 
+Scripts:
+  - npm run test - no tests exists
+  - npm start - starts the app
+  - npm run buildDocker - builds the container
+  - npm run lint - run linter
+  
 Please note: demoContainer folder is just for demo, not a part of the code
